@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Title="Dosagem"
+             Title="VetUtil - Dosagem"
              x:Class="VetUtilX2.Dosagem">
-  <ScrollView>
+  <ScrollView Padding="5">
     <StackLayout>
       <Label Text="Dados do Animal"></Label>
       <StackLayout Orientation="Horizontal" >
@@ -23,11 +23,11 @@
         <Entry Keyboard="Numeric" Placeholder="Dose Apresentação" Text="{Binding DoseApresentacao}"  ></Entry>
         <Picker x:Name="pkUnidadesDoseApresentacao" />
       </StackLayout>
-      <StackLayout IsVisible="False" x:Name="slResultado">
-        <Label FontSize="24" TextColor="Red" VerticalTextAlignment="Center" Text="{Binding Resultado, StringFormat='Dose Total: {0}'}"></Label>
-        <Label FontSize="24" TextColor="Red"  VerticalTextAlignment="Center" Text="{Binding ResultadoApresentacao, StringFormat='Dose Apresentação: {0}'}"></Label>
+      <StackLayout>
+        <Label FontSize="24" IsVisible="false" TextColor="Red" x:Name="lbResultado" VerticalTextAlignment="Center" Text="{Binding Resultado, StringFormat='Dose Total: {0}'}"></Label>
+        <Label FontSize="24" IsVisible="false" TextColor="Purple" x:Name="lbResultadoApresentacao"  VerticalTextAlignment="Center" Text="{Binding ResultadoApresentacao, StringFormat='Dose Apresentação: {0}'}"></Label>
       </StackLayout>
-      <Button Text="Calcular" x:Name="btnCalcular"></Button>
+      <!--<Button Text="Calcular" x:Name="btnCalcular"></Button>-->
     </StackLayout>
   </ScrollView>
   </ContentPage>

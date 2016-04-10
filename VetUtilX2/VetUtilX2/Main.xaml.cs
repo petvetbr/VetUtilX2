@@ -19,6 +19,7 @@ namespace VetUtilX2
             Master = masterPage;
             Detail = new NavigationPage(new Content());
             masterPage.ListView.ItemSelected += OnItemSelected;
+            IsPresented = true;
         }
 
         private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -26,7 +27,7 @@ namespace VetUtilX2
             var item = e.SelectedItem as MasterPageItem;
             if (item != null)
             {
-                var d = new Dosagem();
+                var d = new PartoPage();
                 Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
                 masterPage.ListView.SelectedItem = null;
                 IsPresented = false;

@@ -39,6 +39,13 @@
     <Compile Include="Content.xaml.cs">
       <DependentUpon>Content.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Core\Animal.cs" />
+    <Compile Include="Core\Config.cs" />
+    <Compile Include="Core\Especie.cs" />
+    <Compile Include="Core\Medidas.cs" />
+    <Compile Include="Core\Util.cs" />
+    <Compile Include="Core\ValorMinMax.cs" />
+    <Compile Include="CustomControls\GradientFrame.cs" />
     <Compile Include="DadosFisiologicos.xaml.cs">
       <DependentUpon>DadosFisiologicos.xaml</DependentUpon>
     </Compile>

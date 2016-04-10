@@ -24,6 +24,7 @@ namespace VetUtilX2
                 {
                     _peso = value;
                     OnPropertyChanged(nameof(Peso));
+                    Calcular();
                 }
             }
         }
@@ -40,6 +41,7 @@ namespace VetUtilX2
                 {
                     _dose = value;
                     OnPropertyChanged(nameof(Dose));
+                    Calcular();
                 }
             }
         }
@@ -57,6 +59,7 @@ namespace VetUtilX2
                 {
                     _doseApresentacao = value;
                     OnPropertyChanged(nameof(DoseApresentacao));
+                    Calcular();
                 }
             }
         }
@@ -75,6 +78,8 @@ namespace VetUtilX2
                 {
                     _resultado = value;
                     OnPropertyChanged(nameof(Resultado));
+                    lbResultado.IsVisible =!string.IsNullOrWhiteSpace(value);
+                  
                 }
             }
         }
@@ -90,6 +95,7 @@ namespace VetUtilX2
                 if (_resultadoApresentacao != value)
                 {
                     _resultadoApresentacao = value;
+                    lbResultadoApresentacao.IsVisible = !string.IsNullOrWhiteSpace(value);
                     OnPropertyChanged(nameof(ResultadoApresentacao));
                 }
             }
@@ -148,7 +154,7 @@ namespace VetUtilX2
 
             pkUnidadesDose.SelectedIndexChanged += mudouUnidade;
             pkUnidadesDoseApresentacao.SelectedIndexChanged += mudouUnidade;
-            btnCalcular.Clicked += btnCalcular_Click;
+            //btnCalcular.Clicked += btnCalcular_Click;
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
@@ -163,7 +169,8 @@ namespace VetUtilX2
         }
         private void Calcular()
         {
-            slResultado.IsVisible = false;
+
+           
             decimal pesoNum=0;
             decimal doseNum = 0;
             decimal doseApresentacaoNum = 0;
@@ -198,7 +205,7 @@ namespace VetUtilX2
             }
 
             this.Resultado = string.Format("{0:F2} mg", doseTotal);
-            slResultado.IsVisible = true;
+          
             this.ResultadoApresentacao = string.Empty;
             if (!decimal.TryParse(_doseApresentacao, out doseApresentacaoNum))
             {
@@ -231,7 +238,7 @@ namespace VetUtilX2
                     break;
             }
 
-            this.ResultadoApresentacao = string.Format("{0:F2} {1}", resultadoApr, unidade);
+            this.ResultadoApresentacao = string.Format("{0:F1} {1}", resultadoApr, unidade);
         }
 
     }
