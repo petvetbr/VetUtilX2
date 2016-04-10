@@ -1,6 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Dosagem"
              x:Class="VetUtilX2.Dosagem">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
-</ContentPage>
+  <ScrollView>
+    <StackLayout>
+      <Label Text="Dados do Animal"></Label>
+      <StackLayout Orientation="Horizontal" >
+        <Label VerticalTextAlignment="Center" Text="Peso"></Label>
+        <Entry Keyboard="Numeric" Placeholder="Peso"  Text="{Binding Peso}"  ></Entry>
+        <Label  VerticalTextAlignment="Center" Text="Peso">Kg</Label>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" >
+        <Label  VerticalTextAlignment="Center" Text="Dose"></Label>
+        <Entry Keyboard="Numeric" Placeholder="Dose"  Text="{Binding Dose}"  ></Entry>
+        <Picker x:Name="pkUnidadesDose"/>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" >
+        <Label  VerticalTextAlignment="Center" Text="Apresentação"></Label>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" >
+        <Entry Keyboard="Numeric" Placeholder="Dose Apresentação" Text="{Binding DoseApresentacao}"  ></Entry>
+        <Picker x:Name="pkUnidadesDoseApresentacao" />
+      </StackLayout>
+      <StackLayout IsVisible="False" x:Name="slResultado">
+        <Label FontSize="24" TextColor="Red" VerticalTextAlignment="Center" Text="{Binding Resultado, StringFormat='Dose Total: {0}'}"></Label>
+        <Label FontSize="24" TextColor="Red"  VerticalTextAlignment="Center" Text="{Binding ResultadoApresentacao, StringFormat='Dose Apresentação: {0}'}"></Label>
+      </StackLayout>
+      <Button Text="Calcular" x:Name="btnCalcular"></Button>
+    </StackLayout>
+  </ScrollView>
+  </ContentPage>

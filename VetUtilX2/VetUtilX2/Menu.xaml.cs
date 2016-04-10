@@ -10,27 +10,30 @@ namespace VetUtilX2
 {
     public partial class Menu : ContentPage
     {
+
+        public ListView ListView { get { return listView; } }
+
         public Menu()
         {
             InitializeComponent();
             var masterPageItems = new List<MasterPageItem>();
             masterPageItems.Add(new MasterPageItem
             {
-                Title = "Contacts",
-                IconSource = "contacts.png",
-                TargetType = typeof(ContactsPage)
+                Title = "Dosagem",
+                //IconSource = "contacts.png",
+                TargetType = typeof(Dosagem)
             });
             masterPageItems.Add(new MasterPageItem
             {
-                Title = "TodoList",
-                IconSource = "todo.png",
-                TargetType = typeof(TodoListPage)
+                Title = "Parto",
+                //IconSource = "todo.png",
+                TargetType = typeof(PartoPage)
             });
             masterPageItems.Add(new MasterPageItem
             {
-                Title = "Reminders",
-                IconSource = "reminders.png",
-                TargetType = typeof(ReminderPage)
+                Title = "Dados Fisiológicos",
+                //IconSource = "reminders.png",
+                TargetType = typeof(DadosFisiologicos)
             });
 
             listView.ItemsSource = masterPageItems;
