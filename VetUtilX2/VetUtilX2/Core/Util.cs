@@ -3,11 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace VetUtilCore
 {
     public static class Util
     {
+        public static void CarregarEspecies(Picker pkEspecie)
+        {
+            pkEspecie.Items.Add("Canina");
+            pkEspecie.Items.Add("Felina");
+            pkEspecie.Items.Add("Equina");
+            pkEspecie.Items.Add("Bovina");
+            pkEspecie.Items.Add("Caprina");
+            pkEspecie.Items.Add("Ovina");
+            pkEspecie.Items.Add("Suína");
+            pkEspecie.SelectedIndex = 0;
+        }
+
         public static string NOME = "Nome";
         public static int AddOne(int a)
         {

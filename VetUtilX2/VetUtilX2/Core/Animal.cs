@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace VetUtilCore
 {
-    public class Animal
+    public class Animal:BindableObject
     {
         /// <summary>
         /// Created by fe_000 on 22/03/2016.
@@ -28,6 +29,8 @@ namespace VetUtilCore
             set
             {
                 this.gestacao = value;
+                OnPropertyChanged(nameof(Gestacao));
+
             }
         }
 
@@ -41,6 +44,7 @@ namespace VetUtilCore
             set
             {
                 this.fc = value;
+                OnPropertyChanged(nameof(Fc));
             }
         }
 
@@ -67,6 +71,7 @@ namespace VetUtilCore
             set
             {
                 this.temp = value;
+                OnPropertyChanged(nameof(Temp));
             }
         }
 
@@ -80,6 +85,7 @@ namespace VetUtilCore
             set
             {
                 this.especie = value;
+                OnPropertyChanged(nameof(Especie));
             }
         }
 

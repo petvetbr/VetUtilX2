@@ -48,20 +48,10 @@ namespace VetUtilX2
         {
             InitializeComponent();
             this.Data = DateTime.Now;
-            CarregarListas();
+            Util.CarregarEspecies(pkEspecie);
             this.BindingContext = this;
         }
-        private void CarregarListas()
-        {
-            pkEspecie.Items.Add("Canina");
-            pkEspecie.Items.Add("Felina");
-            pkEspecie.Items.Add("Equina");
-            pkEspecie.Items.Add("Bovina");
-            pkEspecie.Items.Add("Caprina");
-            pkEspecie.Items.Add("Ovina");
-            pkEspecie.Items.Add("Suína");
-            pkEspecie.SelectedIndex = 0;
-        }
+      
         private void DataSelecionada(object sender, EventArgs e)
         {
             Calcular();

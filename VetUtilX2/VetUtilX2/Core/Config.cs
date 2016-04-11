@@ -71,9 +71,9 @@ namespace VetUtilCore
             {
                 Especie = "Bovina",
                 Fc = new ValorMinMax(48, 84),
-                //Fr = new ValorMinMax(10, 14),
+                Fr = new ValorMinMax(26, 50),
                 Gestacao = new ValorMinMax(280, 290),
-                //Temp = new ValorMinMax(37.2, 38.3)
+                Temp = new ValorMinMax(37.2, 38.3)
             };
             dic.Add(TipoEpecies.Bovina, Boi);
 

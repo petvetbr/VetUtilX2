@@ -2,5 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VetUtilX2.DadosFisiologicos">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <ScrollView Padding="5">
+    <StackLayout>
+      <Label Text="Espécie:"/>
+      <Picker x:Name="pkEspecie" SelectedIndexChanged="EspecieSelecionada"  />
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Text="Frequência Cardíaca (BPM):"/>
+        <Label Text="Frequência Respiratório (MPM):" Grid.Row="1"/>
+        <Label Text="Temperatura (C):" Grid.Row="2"/>
+        <Label Text="Período de gestação (dias):" Grid.Row="3"/>
+        <Label Text="{Binding Animal.Fc, StringFormat='{0}'}" Grid.Column="1"/>
+        <Label Text="{Binding Animal.Fr,  StringFormat='{0}'}" Grid.Column="1" Grid.Row="1"/>
+        <Label Text="{Binding Animal.Temp,  StringFormat='{0}'}" Grid.Column="1" Grid.Row="2"/>
+        <Label Text="{Binding Animal.Gestacao,  StringFormat='{0}'}" Grid.Column="1" Grid.Row="3"/>
+      </Grid>
+    </StackLayout>
+  </ScrollView>
 </ContentPage>
